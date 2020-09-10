@@ -24,6 +24,10 @@ export class CartComponent {
     });
   }
 
+  remove(itemIndex) {
+    this.cartService.removeItemFromCart(itemIndex);
+  }
+
   onSubmit(customerData) {
     // Process checkout data here
     console.warn('Your order has been submitted', customerData);

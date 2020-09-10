@@ -4,9 +4,11 @@
   <a routerLink="/shipping">Shipping Prices</a>
 </p>
 
-<div class="cart-item" *ngFor="let item of items">
+<div class="cart-item" *ngFor="let item of items; index as itemIndex">
   <span>{{ item.name }}</span>
   <span>{{ item.price | currency }}</span>
+
+  <button (click)="remove(itemIndex)">remove</button>
 </div>
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
